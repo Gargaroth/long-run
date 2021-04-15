@@ -33,7 +33,7 @@ public class Арифметика {
                 break;
             }
             default: {
-                System.out.println("Неверная команда");
+                System.out.println("Неверная команда, повторите операцию!");
             }
             }
         }
