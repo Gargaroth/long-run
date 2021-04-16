@@ -37,7 +37,7 @@ public class Арифметика {
                 System.out.println("Выберите количество знаков после запятой:");
                 int p = w.nextInt();
                 double o = a/b;
-                double newDouble = new BigDecimal(o).setScale(p, RoundingMode.UP).doubleValue();
+                double newDouble = new BigDecimal(o).setScale(p, RoundingMode.DOWN).doubleValue();
                 System.out.println(newDouble);
                 break;
             }
