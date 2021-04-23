@@ -13,6 +13,23 @@ public class Лабиринт {
             switch (path) {
                 case 's' :
                     System.out.println("Вы пошли прямо");
+                    switch (path){
+                        case 's':
+                            System.out.println("Вы пошли прямо, самый короткий пусть, не всегда самый быстрый");
+
+                            switch (path){
+                                case 's':
+                                    System.out.println("Вы уткнулись в тупик");
+                                    break;
+                            }
+                            continue;
+                        case 'r':
+                            System.out.println("Вы решили повернуть направо и услышали шаги, приближающиеся из левого туннеля");
+                            continue;
+                        case 'l':
+                            System.out.println("Вы выбрали левый туннель");
+                            continue;
+                    }
                     continue;
 
                 case 'r':
