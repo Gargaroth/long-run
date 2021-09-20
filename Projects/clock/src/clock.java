@@ -11,9 +11,8 @@ class clock {
             double angle = Math.abs(h - m);
             angle = round(angle);
             if (angle == 180) {
-                s=format(s);
-                System.out.println(s);
-                s+=3600;
+                format(s);
+                s += 3600;
             }
         }
     }
@@ -21,16 +20,19 @@ class clock {
     public static double round(double value) {
         value *= 10;
         value = Math.round(value);
-        return value/10d;
+        return value / 10d;
 
     }
 
-    public static double format (double  s) {
-        double hour = s/3600;
-        s = s%3600;
-        double min = s/60;
-        double sec = s%60;
-        return System.out.println(hour+":"+min+":"+sec);
+    public static void format(int s) {
+        int hour = s / 3600;
+        s = s % 3600;
+        int min = s / 60;
+        s = s % 60;
+        if (hour < 10) {
+            System.out.println("0" + hour + ":" + "0" + min + ":" + s);
+        }
+        else System.out.println(hour + ":" + min + ":" + s);
 
     }
 
