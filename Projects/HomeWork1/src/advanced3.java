@@ -1,12 +1,10 @@
 public class advanced3 {
     public static void main(String[] args) {
+        
 
-        /* блин, вижу что задача решается просто, но вот решать я ее стал не правильно и не пойму с помощью чего ее надо решать,
-        скорее всего цикл, но не уверен, буду рад подсказке какую конструкцию использовать и переделаю, уверен моих знаний достаточно для ее решения  */
-
-        boolean hasFuel = true;
+        boolean hasFuel = false;
         boolean hasElectricsProblem = true;
-        boolean hasMotorProblems = false;
+        boolean hasMotorProblems = true;
         boolean hasTransmissionProblem = true;
         boolean hasWheelProblem = true;
 
@@ -17,46 +15,62 @@ public class advanced3 {
         int Wheel = 2000;
         double overallPrice;
 
+        if (hasElectricsProblem && hasWheelProblem && hasMotorProblems && hasTransmissionProblem){
+            overallPrice = ((Electrics + Wheel + Motor + Transmission) * 0.9) * 0.8;
+            System.out.println("К оплате" + " " +overallPrice + ", " + "за консультацию денег не берем");
+        }
 
-        if (hasMotorProblems) {
+        else if (hasMotorProblems) {
             overallPrice = Motor;
-            if (hasMotorProblems && hasElectricsProblem) {
+
+            if (hasTransmissionProblem && hasMotorProblems && hasElectricsProblem) {
+                overallPrice = ((Motor + Electrics + Transmission) * 0.9) * 0.8;
+
+            } else if (hasMotorProblems && hasElectricsProblem) {
                 overallPrice = (Motor + Electrics) * 0.9;
+
             } else if (hasMotorProblems && hasWheelProblem) {
                 overallPrice = (Motor + Wheel) * 0.9;
+
             } else if (hasMotorProblems && hasTransmissionProblem) {
-                overallPrice = (Motor + Transmission) * 0.9;
+                overallPrice = ((Motor + Transmission) * 0.9) * 0.8;
+
             }
-            if (hasTransmissionProblem && (hasMotorProblems || hasElectricsProblem)) {
-                overallPrice = overallPrice * 0.8;
-            }
+            System.out.println("К оплате" + " " +overallPrice + ", " + "за консультацию денег не берем");
+
         } else if (hasElectricsProblem) {
             overallPrice = Electrics;
 
-            if (hasElectricsProblem && hasWheelProblem) {
+            if (hasElectricsProblem && hasTransmissionProblem && hasWheelProblem) {
+                overallPrice = ((Electrics + Transmission + Wheel) * 0.9) * 0.8;
+
+            } else if (hasElectricsProblem && hasWheelProblem) {
                 overallPrice = (Electrics + Wheel) * 0.9;
+
             } else if (hasElectricsProblem && hasTransmissionProblem) {
-                overallPrice = (Electrics + Transmission) * 0.9;
+                overallPrice = ((Electrics + Transmission) * 0.9) * 0.8;
+
             }
-            if (hasTransmissionProblem && (hasMotorProblems || hasElectricsProblem)) {
-                overallPrice = overallPrice * 0.8;
-            }
+            System.out.println("К оплате" + " " +overallPrice + ", " + "за консультацию денег не берем");
+
         } else if (hasTransmissionProblem) {
             overallPrice = Transmission;
-            if (hasTransmissionProblem && hasElectricsProblem) {
-                overallPrice = (Transmission + Electrics) * 0.9;
-            } else if (hasTransmissionProblem && hasWheelProblem) {
+
+            if (hasTransmissionProblem && hasWheelProblem) {
                 overallPrice = (Transmission + Wheel) * 0.9;
+
             }
-            if (hasTransmissionProblem && (hasMotorProblems || hasElectricsProblem)) {
-                overallPrice = overallPrice * 0.8;
-            }
+            System.out.println("К оплате" + " " +overallPrice + ", " + "за консультацию денег не берем");
 
         } else if (hasWheelProblem) {
             overallPrice = Wheel;
+            System.out.println("К оплате" + " " +overallPrice + ", " + "за консультацию денег не берем");
+
+        } else if (hasFuel){
+            System.out.println("Ваша машина машина в идеальном состоянии, такого не может быть!");
+
         } else {
-            overallPrice = Fuel;
+            overallPrice=Fuel;
+            System.out.println("К оплате" + " " +overallPrice + " " + "за консультацию");
         }
-        System.out.println(overallPrice);
-    }}
-// блин, вижу что легкая задача, но вот решать я ее стал не правильно и не пойму с помощью чего ее надо решать,
+            }}
