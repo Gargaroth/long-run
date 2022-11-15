@@ -1,10 +1,10 @@
 public class advanced3 {
     public static void main(String[] args) {
-        
 
-        boolean hasFuel = false;
-        boolean hasElectricsProblem = true;
-        boolean hasMotorProblems = true;
+
+        boolean hasFuel = true;
+        boolean hasElectricsProblem = false;
+        boolean hasMotorProblems = false;
         boolean hasTransmissionProblem = true;
         boolean hasWheelProblem = true;
 
