@@ -18,7 +18,7 @@ public class Advanced1 {
         Bloom[] blooms = {роза, папоротник};
 
         for (Bloom bloom : blooms) {
-            bloom.canBloom();
+            bloom.Bloom();
 
 
         }

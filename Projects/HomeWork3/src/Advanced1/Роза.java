@@ -8,7 +8,7 @@ public class Роза extends  Растение implements Can, Bloom{
         System.out.println("Роза - Умеет пахнуть");
     }
 
-    public  void canBloom(){
+    public  void Bloom(){
         System.out.println("Роза - Умеет цвести");
     }
 
