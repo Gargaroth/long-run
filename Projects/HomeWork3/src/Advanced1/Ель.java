@@ -2,25 +2,18 @@ package Advanced1;
 
 public class Ель extends Дерево implements Can {
 
-    public Ель(String name) {
-        super(name);
-    }
+
 
     public void can(){
-        System.out.println("Умеет пахнуть");
+        System.out.println("Ель - Умеет пахнуть");
     }
 @Override
     public void haveCone(){
-    System.out.println("Имеет шишки");
+    System.out.println("Ель - Имеет шишки");
 
     }
 
-    @Override
-    public String toString() {
-        return "Ель{" +
-                "name='" + name + '\'' +
-                '}';
-    }
+
 
 
 }
