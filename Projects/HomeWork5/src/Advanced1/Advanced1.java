@@ -8,7 +8,6 @@ public class Advanced1 {
     public static void main(String[] args) throws IOException {
 
         Random number = new Random();
-        String fileName = "F:\\JAVA\\Projects\\HomeWork5\\src\\Advanced1\\report_2.txt";
 
         FinancialRecord financialRecord1 = new FinancialRecord(number.nextInt(1,10000), number.nextInt(1,10000));
         FinancialRecord financialRecord2 = new FinancialRecord(number.nextInt(1,10000), number.nextInt(1,10000));
@@ -21,6 +20,7 @@ public class Advanced1 {
         FinancialRecord financialRecord9 = new FinancialRecord(number.nextInt(1,10000), number.nextInt(1,10000));
         FinancialRecord financialRecord10 = new FinancialRecord(number.nextInt(1,10000), number.nextInt(1,10000));
 
+        String fileName = "F:\\JAVA\\Projects\\HomeWork5\\src\\Advanced1\\report_2.txt";
 
         BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fileName));
 
@@ -32,7 +32,6 @@ public class Advanced1 {
         fileWriter.close();
 
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
-
 
         int resultOutcome = 0;
         int resultIncome = 0;
@@ -47,8 +46,8 @@ public class Advanced1 {
             int incomes = 0;
             incomes += Integer.parseInt(x[0]);
             resultIncome += incomes;
-
         }
+        reader.close();
         System.out.println("Общие доходы - "+ resultIncome +", "+"Общие расходы - "+resultOutcome);
 
 
